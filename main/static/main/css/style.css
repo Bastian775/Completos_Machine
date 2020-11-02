@@ -1,0 +1,57 @@
+body{
+    margin: 0px !important;
+    background-color: beige;
+}
+.color-nav{
+    background-color: burlywood;
+}
+
+.navimage{
+    
+    margin: 10px;
+    
+}
+.divizquierda{
+    float: left;
+}
+.divderecha{
+    float: right;
+}
+.centro{
+    float: center;
+}
+
+#conteiner-top{
+    color: burlywood;
+    text-align: center;
+}
+#logo{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-left:5px;
+    height:100px;
+}
+.img-fluid {
+    max-width: 100%;
+    height:auto;
+}   
+.carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 300px ;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }

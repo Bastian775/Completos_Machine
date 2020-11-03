@@ -12,4 +12,4 @@ class Completo(models.Model):
     tipo = models.CharField(max_length=50)
     precio = models.CharField(max_length=20)
 
-
+# aqui me da problema

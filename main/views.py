@@ -23,5 +23,7 @@ def Registro(request):
 
 
 def listado_completo(request):
-    return render(request, 'core/listado_completos.html')
+    template = loader.get_template('main/Listado_completos')
+    context = {}
+    return HttpResponse(template.render(context, request))
 

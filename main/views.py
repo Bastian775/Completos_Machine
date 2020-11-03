@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import  Completo
 # Create your views here.
 
 
@@ -19,4 +20,8 @@ def Registro(request):
     template = loader.get_template('main/Registro.html')
     context = {}
     return HttpResponse(template.render(context, request))
+
+
+def listado_completo(request):
+    return render(request, 'core/listado_completos.html')
 

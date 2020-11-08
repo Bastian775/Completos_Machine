@@ -1,13 +1,12 @@
 from django.urls import path    
-from . import views
-from .views import listado_completo
+from .views import listado_completo, Completos, Registro , index, login
 
 
-app_name='main'
 
 urlpatterns = [
-    path('',views.index, name='index'),
-    path('Completos.html/',views.Completos, name='Completos'),
-    path('Registro.html/',views.Registro, name='Registro'),
-    path('Listado_completos.html/',views.listado_completo, name='listado_completo'),
+    path('',index, name='index'),
+    path('Completos.html/',Completos, name='Completos'),
+    path('Registro.html/',Registro, name='Registro'),
+    path('Listado_completos.html/',listado_completo, name='listado_completo'),
+    path('login.html/',login, name='login'),
 ]

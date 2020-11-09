@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from .models import  Completo
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout as do_logout
 from django.contrib.auth import authenticate
@@ -8,7 +6,8 @@ from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
-
+def home(request):
+    return render(request, 'main/index.html')
 
 def index(request):
     return render(request, 'main/index.html')
@@ -16,15 +15,10 @@ def index(request):
 def Completos(request):
     return render(request, 'main/Completos.html')
 
-def Registro(request):
-    return render(request, 'main/Registro.html')
-
-
 def listado_completo(request):
     return render(request, 'main/listado_completo.html')
 
-
-def register(request):
+def Registro(request):
     # Creamos el formulario de autenticación vacío
     form = UserCreationForm()
     if request.method == "POST":
@@ -48,7 +42,7 @@ def register(request):
     form.fields['password2'].help_text = None        
 
     # Si llegamos al final renderizamos el formulario
-    return render(request, "main/register.html", {'form': form})
+    return render(request, "main/Registro.html", {'form': form})
 
 def login(request):
     # Creamos el formulario de autenticación vacío
@@ -79,4 +73,4 @@ def logout(request):
     # Finaliza la sesion
     do_logout(request)
     # Redireccion a login
-    return redirect('/')    
+    return redirect('/') 

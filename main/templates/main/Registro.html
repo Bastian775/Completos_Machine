@@ -1,74 +1,27 @@
 {% extends 'main/plantilla.html' %}
 {% load static %}
 {% block contenido %}
-<body>
-	<main>
-		<form action="index.html" method="GET" class="formulario" id="formulario">
-			<!-- Grupo: Usuario -->
-			<div class="formulario__grupo" id="grupo__direccion">
-				<label for="direccion" class="formulario__label">Direccion</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Independencia">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">Ingrese direccion valida</p>
-			</div>
 
-			<!-- Grupo: Nombre -->
-			<div class="formulario__grupo" id="grupo__nombre">
-				<label for="nombre" class="formulario__label">Nombre</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-			</div>
+<section class="about-area pt-100 pb-100">         
+<div class="container">   
+  	<div class="row align-items-center justify-content-between">             
 
-			<!-- Grupo: Apellido -->
-			<div class="formulario__grupo" id="grupo__apellido">
-				<label for="apellido" class="formulario__label">Apellido</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Burgos">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">Ingrese apellido valido</p>
-			</div>
-
-			<!-- Grupo: Correo Electronico -->
-			<div class="formulario__grupo" id="grupo__correo">
-				<label for="correo" class="formulario__label">Correo Electrónico</label>
-				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-			</div>
-
-			<!-- Grupo: Teléfono -->
-			<div class="formulario__grupo" id="grupo__telefono">
-				<label for="telefono" class="formulario__label">Teléfono</label>
-				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
-					<i class="formulario__validacion-estado fas fa-times-circle"></i>
-				</div>
-				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
-			</div>
-
-
-			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-			</div>
-
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-
-                <button class="btn btn-primary" type="submit">Enviar</button>
-                
-                
-            
-                
+		<div class="col-lg-12 col-md-12 col-sm-12">                     
+			 
+			<div class="container">                             
 				
-				
-			</div>
-		</form>
-	</main>
-	{% endblock contenido %}
+				<h2>Registrar usuario</h2>                                      
+					<form method="POST">                                 
+					 {{ form.as_p }}                                 
+					 {% csrf_token %}                                
+					  <button type="submit">Registrar</button>
+					</form>                                                          
+					  <hr />                                                          
+					<a href="/login.html">Iniciar sesión</a>   
+
+			</div>             
+		</div>        
+	</div>         
+</div>
+
+{% endblock contenido %}
